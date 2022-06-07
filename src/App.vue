@@ -1,31 +1,14 @@
 <template>
   <div class="wrapper">
     <div class="container">
-      <TodoList v-bind:todos="todos" />
+      <h1>Todo application</h1>
+      <router-view />
     </div>
   </div>
 </template>
 
-<script>
-import TodoList from "@/components/TodoList";
-
-export default {
-  name: "App",
-  data() {
-    return {
-      todos: [
-        { id: 1, title: "Текст 1", completed: false },
-        { id: 2, title: "Текст 2", completed: false },
-        { id: 3, title: "Текст 3", completed: false },
-      ],
-    };
-  },
-  components: { TodoList },
-};
-</script>
-
 <style lang="scss">
-$fontfamily: "Arial";
+$fontfamily: 'Arial';
 $minwidth: 320px;
 
 * {
