@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="header">Задания</div>
-    <router-link class="link" to="/home">Домашняя страница</router-link>
+    <router-link class="link" to="/deleted">Удаленные задания</router-link>
     <AddTodo @add-todo="addTodo" />
 
     <select v-model="filter">

@@ -1,5 +1,5 @@
 import { createRouter, createWebHashHistory } from 'vue-router';
-import Home from '@/views/HomePage';
+import Deleted from '@/views/DeletedTodos';
 
 export default createRouter({
   history: createWebHashHistory(),
@@ -9,8 +9,8 @@ export default createRouter({
       component: () => import('./views/Todos.vue'),
     },
     {
-      path: '/home',
-      component: Home,
+      path: '/deleted',
+      component: Deleted,
     },
   ],
 });
