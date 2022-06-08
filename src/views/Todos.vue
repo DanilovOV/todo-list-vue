@@ -35,7 +35,7 @@ export default {
     };
   },
 
-  mounted() {
+  created() {
     fetch('https://jsonplaceholder.typicode.com/todos?_limit=10')
       .then((response) => response.json())
       .then((json) => {
@@ -58,6 +58,9 @@ export default {
 
   methods: {
     removeTodo(id) {
+      this.todos.map((todo) => {
+        if (todo.id === id) this.$store.commit('addDeletedTask', todo.title);
+      });
       this.todos = this.todos.filter((todo) => todo.id !== id);
     },
     addTodo(todo) {
@@ -87,5 +90,9 @@ select {
 .link {
   color: inherit;
   font-size: 20px;
+  color: rgba(34, 77, 170, 0.7);
+  &:hover {
+    color: rgba(34, 77, 170, 1);
+  }
 }
 </style>

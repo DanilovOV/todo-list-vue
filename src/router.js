@@ -1,4 +1,5 @@
 import { createRouter, createWebHashHistory } from 'vue-router';
+import Todos from '@/views/Todos';
 import Deleted from '@/views/DeletedTodos';
 
 export default createRouter({
@@ -6,7 +7,7 @@ export default createRouter({
   routes: [
     {
       path: '/',
-      component: () => import('./views/Todos.vue'),
+      component: Todos,
     },
     {
       path: '/deleted',
