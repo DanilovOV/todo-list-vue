@@ -41,6 +41,7 @@ button {
   &:hover {
     background-color: rgba(34, 77, 170, 0.2);
   }
+  margin-left: 5px;
 }
 .done {
   text-decoration: line-through;
