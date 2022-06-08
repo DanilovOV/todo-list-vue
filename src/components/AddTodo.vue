@@ -9,7 +9,7 @@
 export default {
   data() {
     return {
-      title: "",
+      title: '',
     };
   },
   methods: {
@@ -21,8 +21,8 @@ export default {
           completed: false,
         };
 
-        this.$emit("add-todo", newTodo);
-        this.title = "";
+        this.$emit('add-todo', newTodo);
+        this.title = '';
       }
     },
   },
@@ -34,14 +34,20 @@ form {
   margin: 30px 0;
   display: flex;
   justify-content: space-between;
-  width: 300px;
 }
 input {
-  border: 1px solid black;
-  padding: 2px;
+  padding: 4px;
+  flex: 1 0 auto;
+  margin-right: 30px;
+  font-size: 18px;
+  border-radius: 5px;
 }
 button {
-  padding: 5px;
-  border-radius: 5px;
+  padding: 10px;
+  font-size: 18px;
+  border-radius: 20px;
+  &:hover {
+    background-color: rgba(34, 77, 170, 0.2);
+  }
 }
 </style>

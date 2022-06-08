@@ -11,18 +11,15 @@
 </template>
 
 <script>
-import TodoItem from "@/components/TodoItem";
+import TodoItem from '@/components/TodoItem';
 
 export default {
-  props: ["todos"],
+  props: ['todos'],
   components: { TodoItem },
   methods: {
     removeTodo(id) {
-      this.$emit("remove-todo", id);
+      this.$emit('remove-todo', id);
     },
   },
 };
 </script>
-
-<style lang="scss" scoped>
-</style>

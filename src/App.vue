@@ -1,7 +1,6 @@
 <template>
   <div class="wrapper">
     <div class="container">
-      <h1>Todo application</h1>
       <router-view />
     </div>
   </div>
@@ -10,6 +9,7 @@
 <style lang="scss">
 $fontfamily: 'Arial';
 $minwidth: 320px;
+$fontcolor: rgb(65, 60, 60);
 
 * {
   padding: 0;
@@ -39,13 +39,13 @@ aside {
 }
 html,
 body {
+  min-width: $minwidth;
+  color: $fontcolor;
   height: 100%;
   width: 100%;
   margin: 0;
   padding: 0;
-  min-width: $minwidth;
   position: relative;
-  color: #000;
 }
 body {
   font-size: 100%;
@@ -60,6 +60,7 @@ input,
 button,
 textarea {
   font-family: $fontfamily;
+  color: $fontcolor;
 }
 input::-ms-clear {
   display: none;
@@ -96,11 +97,14 @@ h6 {
 
 .wrapper {
   width: 100%;
-  min-height: 100%;
+  min-height: 100vh;
   overflow: hidden;
+
+  background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
 }
 .container {
   width: 500px;
   margin: 0px auto;
+  padding-bottom: 30px;
 }
 </style>

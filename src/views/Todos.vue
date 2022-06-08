@@ -1,13 +1,15 @@
 <template>
   <div>
-    <div>Задания</div>
-    <router-link to="/">Домашняя страница</router-link>
+    <div class="header">Задания</div>
+    <router-link class="link" to="/">Домашняя страница</router-link>
     <AddTodo @add-todo="addTodo" />
+
     <select v-model="filter">
       <option value="all">Все задания</option>
       <option value="completed">Выполненные</option>
       <option value="not-completed">Невыполненные</option>
     </select>
+
     <TodoList v-if="filteredTodos.length" v-bind:todos="filteredTodos" @remove-todo="removeTodo" />
     <p v-else>Нет заданий!</p>
   </div>
@@ -56,3 +58,22 @@ export default {
   },
 };
 </script>
+
+<style lang="scss" scoped>
+.header {
+  font-size: 26px;
+  text-align: center;
+  margin: 20px 0;
+}
+select {
+  width: 130px;
+  font-size: 16px;
+  padding: 8px 5px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.link {
+  color: inherit;
+  font-size: 20px;
+}
+</style>

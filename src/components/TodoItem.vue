@@ -26,8 +26,7 @@ li {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 300px;
-  border: 1px solid black;
+  border-bottom: 1px solid rgba(22, 22, 22, 0.35);
   padding: 10px;
   margin: 10px 0 0;
   font-size: 17px;
@@ -39,6 +38,9 @@ button {
   font-size: 18px;
   padding: 3px 8px;
   border-radius: 30%;
+  &:hover {
+    background-color: rgba(34, 77, 170, 0.2);
+  }
 }
 .done {
   text-decoration: line-through;
