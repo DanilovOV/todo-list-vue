@@ -2,10 +2,11 @@
   <ul>
     <TodoItem
       v-for="(todo, index) in todos"
-      v-bind:key="todo"
-      v-bind:todo="todo"
-      v-bind:index="index"
-      v-on:remove-todo="removeTodo"
+      :key="todo"
+      :todo="todo"
+      :index="index"
+      @remove-todo="removeTodo"
+      @change-complete="changeComplete"
     />
   </ul>
 </template>
@@ -19,6 +20,9 @@ export default {
   methods: {
     removeTodo(id) {
       this.$emit('remove-todo', id);
+    },
+    changeComplete(id) {
+      this.$emit('change-complete', id);
     },
   },
 };

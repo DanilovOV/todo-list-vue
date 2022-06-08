@@ -1,7 +1,17 @@
 <template>
   <li>
-    <span v-bind:class="{ done: todo.completed }">
-      <input type="checkbox" />
+    <span v-bind:class="{ completed: todo.completed }">
+      <input
+        v-if="todo.completed"
+        checked
+        type="checkbox"
+        @change="$emit('change-complete', todo.id)"
+      />
+      <input
+        v-else
+        type="checkbox"
+        @change="$emit('change-complete', todo.id)"
+      />
       <strong>{{ index + 1 }}</strong>
       {{ todo.title }}
     </span>
@@ -43,7 +53,7 @@ button {
   }
   margin-left: 5px;
 }
-.done {
+.completed {
   text-decoration: line-through;
 }
 </style>

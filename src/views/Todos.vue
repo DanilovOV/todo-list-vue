@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="header">Задания</div>
-    <router-link class="link" to="/">Домашняя страница</router-link>
+    <router-link class="link" to="/home">Домашняя страница</router-link>
     <AddTodo @add-todo="addTodo" />
 
     <select v-model="filter">
@@ -10,7 +10,12 @@
       <option value="not-completed">Невыполненные</option>
     </select>
 
-    <TodoList v-if="filteredTodos.length" v-bind:todos="filteredTodos" @remove-todo="removeTodo" />
+    <TodoList
+      v-if="filteredTodos.length"
+      v-bind:todos="filteredTodos"
+      @remove-todo="removeTodo"
+      @change-complete="changeComplete"
+    />
     <p v-else>Нет заданий!</p>
   </div>
   <hr />
@@ -42,8 +47,11 @@ export default {
 
   computed: {
     filteredTodos() {
-      if (this.filter === 'completed') return this.todos.filter((todo) => todo.completed);
-      if (this.filter === 'not-completed') return this.todos.filter((todo) => !todo.completed);
+      if (this.filter === 'completed')
+        return this.todos.filter((todo) => todo.completed);
+      if (this.filter === 'not-completed')
+        return this.todos.filter((todo) => !todo.completed);
+
       return this.todos;
     },
   },
@@ -54,6 +62,11 @@ export default {
     },
     addTodo(todo) {
       this.todos.push(todo);
+    },
+    changeComplete(id) {
+      this.todos.map((todo) => {
+        if (todo.id === id) todo.completed = !todo.completed;
+      });
     },
   },
 };
@@ -66,7 +79,6 @@ export default {
   margin: 20px 0;
 }
 select {
-  width: 130px;
   font-size: 16px;
   padding: 8px 5px;
   border-radius: 5px;

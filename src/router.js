@@ -6,11 +6,11 @@ export default createRouter({
   routes: [
     {
       path: '/',
-      component: Home,
+      component: () => import('./views/Todos.vue'),
     },
     {
-      path: '/todos',
-      component: () => import('./views/Todos.vue'),
+      path: '/home',
+      component: Home,
     },
   ],
 });

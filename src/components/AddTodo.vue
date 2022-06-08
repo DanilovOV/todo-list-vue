@@ -36,7 +36,7 @@ form {
   justify-content: space-between;
 }
 input {
-  padding: 4px;
+  padding: 4px 10px;
   flex: 1 0 auto;
   margin-right: 30px;
   font-size: 18px;
