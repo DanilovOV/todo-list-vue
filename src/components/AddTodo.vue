@@ -1,6 +1,6 @@
 <template>
   <form @submit.prevent="onSubmit">
-    <input type="text" v-model="title" />
+    <input @keyup.enter="onSubmit" type="text" v-model="title" />
     <button type="submit">Создать</button>
   </form>
 </template>
