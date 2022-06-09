@@ -55,5 +55,6 @@ button {
 }
 .completed {
   text-decoration: line-through;
+  color: rgba(65, 60, 60, 0.7);
 }
 </style>
