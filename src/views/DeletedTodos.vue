@@ -1,19 +1,20 @@
 <template>
   <div class="header">Удаленные задания</div>
   <router-link class="link" to="/">Список заданий</router-link>
-  <ul class="deletedTasks__list">
+  <ul v-if="$store.state.deletedTasks.length" class="delTasks__list">
     <li
-      class="deletedTasks__item"
+      class="delTasks__item"
       v-for="(task, index) in $store.state.deletedTasks"
       :key="index"
     >
       {{ task }}
     </li>
   </ul>
+  <div v-else class="delTasks__noTasks">Нет удаленных заданий!</div>
 </template>
 
 <style lang="scss" scoped>
-.deletedTasks {
+.delTasks {
   &__list {
     margin: 20px 0;
   }
@@ -21,6 +22,10 @@
     border-bottom: 1px solid black;
     font-size: 18px;
     padding: 3px 0;
+  }
+  &__noTasks {
+    margin: 20px 0;
+    font-size: 22px;
   }
 }
 .header {

@@ -16,7 +16,7 @@
       @remove-todo="removeTodo"
       @change-complete="changeComplete"
     />
-    <p v-else>Нет заданий!</p>
+    <p v-else class="noTasks">Нет заданий!</p>
   </div>
   <hr />
 </template>
@@ -94,5 +94,9 @@ select {
   &:hover {
     color: rgba(34, 77, 170, 1);
   }
+}
+.noTasks {
+  margin: 20px 0;
+  font-size: 22px;
 }
 </style>
