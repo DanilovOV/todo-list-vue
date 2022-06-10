@@ -1,6 +1,6 @@
 <template>
   <div class="header">Удаленные задания</div>
-  <router-link class="link" to="/">Список заданий</router-link>
+  <router-link class="link" to="/">К списку заданий</router-link>
   <ul v-if="$store.state.deletedTasks.length" class="delTasks__list">
     <li
       class="delTasks__item"
