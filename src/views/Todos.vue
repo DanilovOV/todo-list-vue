@@ -2,7 +2,7 @@
   <div>
     <div class="header">Задания</div>
     <router-link class="link" to="/deleted">Удаленные задания</router-link>
-    <AddTodo @add-todo="addTodo" />
+    <AddTodo />
 
     <select v-model="filter">
       <option value="all">Все задания</option>
@@ -10,12 +10,7 @@
       <option value="not-completed">Невыполненные</option>
     </select>
 
-    <TodoList
-      v-if="filteredTodos.length"
-      v-bind:todos="filteredTodos"
-      @remove-todo="removeTodo"
-      @change-complete="changeComplete"
-    />
+    <TodoList v-if="filteredTodos.length" :todos="filteredTodos" />
     <p v-else class="noTasks">Нет заданий!</p>
   </div>
   <hr />
@@ -30,7 +25,6 @@ export default {
 
   data() {
     return {
-      todos: [],
       filter: 'all',
     };
   },
@@ -48,28 +42,10 @@ export default {
   computed: {
     filteredTodos() {
       if (this.filter === 'completed')
-        return this.todos.filter((todo) => todo.completed);
+        return this.$store.state.tasks.filter((todo) => todo.completed);
       if (this.filter === 'not-completed')
-        return this.todos.filter((todo) => !todo.completed);
-
-      return this.todos;
-    },
-  },
-
-  methods: {
-    removeTodo(id) {
-      this.todos.map((todo) => {
-        if (todo.id === id) this.$store.commit('addDeletedTask', todo.title);
-      });
-      this.todos = this.todos.filter((todo) => todo.id !== id);
-    },
-    addTodo(todo) {
-      this.todos.push(todo);
-    },
-    changeComplete(id) {
-      this.todos.map((todo) => {
-        if (todo.id === id) todo.completed = !todo.completed;
-      });
+        return this.$store.state.tasks.filter((todo) => !todo.completed);
+      return this.$store.state.tasks;
     },
   },
 };

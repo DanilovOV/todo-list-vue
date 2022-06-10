@@ -5,17 +5,17 @@
         v-if="todo.completed"
         checked
         type="checkbox"
-        @change="$emit('change-complete', todo.id)"
+        @change="$store.commit('changeComplete', todo.id)"
       />
       <input
         v-else
         type="checkbox"
-        @change="$emit('change-complete', todo.id)"
+        @change="$store.commit('changeComplete', todo.id)"
       />
       <strong>{{ index + 1 }}</strong>
       {{ todo.title }}
     </span>
-    <button v-on:click="$emit('remove-todo', todo.id)">&times;</button>
+    <button @click="deleteTask">&times;</button>
   </li>
 </template>
 
@@ -27,6 +27,12 @@ export default {
       required: true,
     },
     index: Number,
+  },
+  methods: {
+    deleteTask() {
+      this.$store.commit('addDeletedTask', this.todo.id);
+      this.$store.commit('removeTask', this.todo.id);
+    },
   },
 };
 </script>

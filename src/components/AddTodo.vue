@@ -15,13 +15,13 @@ export default {
   methods: {
     onSubmit() {
       if (this.title.trim()) {
-        const newTodo = {
+        const newTask = {
           id: Date.now(),
           title: this.title,
           completed: false,
         };
 
-        this.$emit('add-todo', newTodo);
+        this.$store.commit('addTask', newTask);
         this.title = '';
       }
     },
