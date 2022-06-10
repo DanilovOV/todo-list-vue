@@ -23,6 +23,7 @@
     font-size: 18px;
     margin-top: 10px;
     padding: 3px 0;
+    word-break: break-word;
   }
   &__noTasks {
     margin: 20px 0;
