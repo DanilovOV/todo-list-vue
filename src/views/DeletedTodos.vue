@@ -21,6 +21,7 @@
   &__item {
     border-bottom: 1px solid black;
     font-size: 18px;
+    margin-top: 10px;
     padding: 3px 0;
   }
   &__noTasks {
@@ -32,10 +33,6 @@
   font-size: 26px;
   text-align: center;
   margin: 20px 0;
-}
-.text {
-  font-size: 18px;
-  margin: 20px 0 0;
 }
 .link {
   color: inherit;
