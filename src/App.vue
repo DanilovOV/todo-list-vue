@@ -103,7 +103,8 @@ h6 {
   background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
 }
 .container {
-  width: 500px;
+  max-width: 500px;
+  padding: 0 5px;
   margin: 0px auto;
   padding-bottom: 30px;
 }
