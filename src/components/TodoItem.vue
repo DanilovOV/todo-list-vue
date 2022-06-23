@@ -1,19 +1,21 @@
 <template>
   <li>
-    <span v-bind:class="{ completed: todo.completed }">
+    <span :class="{ completed: todo.completed }">
       <input
         v-if="todo.completed"
         checked
+        :id="index"
         type="checkbox"
         @change="$store.commit('changeComplete', todo.id)"
       />
       <input
         v-else
+        :id="index"
         type="checkbox"
         @change="$store.commit('changeComplete', todo.id)"
       />
-      <strong>{{ index + 1 }}</strong>
-      {{ todo.title }}
+      
+      <label :for="index"><strong>{{ index + 1 }}</strong> {{ todo.title }}</label>
     </span>
     <button @click="deleteTask">&times;</button>
   </li>
@@ -49,7 +51,7 @@ li {
   word-break: break-word;
 }
 input {
-  margin-right: 5px;
+  cursor: pointer;
 }
 button {
   font-size: 18px;
@@ -63,5 +65,9 @@ button {
 .completed {
   text-decoration: line-through;
   color: rgba(65, 60, 60, 0.7);
+}
+label {
+  padding-left: 5px;
+  cursor: pointer;
 }
 </style>
