@@ -14,8 +14,10 @@
         type="checkbox"
         @change="$store.commit('changeComplete', todo.id)"
       />
-      
-      <label :for="index"><strong>{{ index + 1 }}</strong> {{ todo.title }}</label>
+
+      <label :for="index">
+        <strong>{{ index + 1 }}</strong> {{ todo.title }}
+      </label>
     </span>
     <button @click="deleteTask">&times;</button>
   </li>
