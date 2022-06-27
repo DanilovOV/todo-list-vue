@@ -18,7 +18,7 @@ $fontcolor: rgb(65, 60, 60);
 }
 *,
 *:before,
-*after {
+*:after {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
