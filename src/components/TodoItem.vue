@@ -46,7 +46,6 @@ li {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid rgba(22, 22, 22, 0.35);
   padding: 10px;
   margin: 10px 0 0;
   font-size: 17px;
