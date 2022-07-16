@@ -36,6 +36,7 @@ form {
   justify-content: space-between;
 }
 input {
+  background-color: white;
   padding: 4px 10px;
   flex: 1 0 auto;
   margin-right: 30px;
@@ -43,6 +44,7 @@ input {
   border-radius: 5px;
 }
 button {
+  background-color: white;
   padding: 10px;
   font-size: 18px;
   border-radius: 20px;

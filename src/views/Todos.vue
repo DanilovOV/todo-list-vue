@@ -50,6 +50,8 @@ export default {
   margin: 20px 0;
 }
 select {
+  background-color: white;
+  color: black;
   font-size: 16px;
   padding: 8px 5px;
   border-radius: 5px;

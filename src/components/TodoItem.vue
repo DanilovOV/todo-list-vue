@@ -55,6 +55,7 @@ input {
   cursor: pointer;
 }
 button {
+  background-color: white;
   font-size: 18px;
   padding: 3px 8px;
   border-radius: 30%;
