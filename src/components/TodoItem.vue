@@ -34,7 +34,11 @@ const editTask = async () => {
 
 const updateTask = () => {
 	if (!newContent.value) return
-	store.updateTask(props.id, newContent.value)
+
+	if (newContent.value !== props.content) {
+		store.updateTask(props.id, newContent.value)
+	}
+
 	isTaskEditing.value = false
 }
 </script>
@@ -71,7 +75,11 @@ const updateTask = () => {
 			<button class="todo__button" title="Изменить" @click="editTask">
 				<AppIcon name="Edit" :size="17" />
 			</button>
-			<button class="todo__button" title="Удалить" @click="editTask">
+			<button
+				class="todo__button"
+				title="Удалить"
+				@click="store.deleteTask(id)"
+			>
 				<AppIcon name="Close" :size="15" stroke />
 			</button>
 		</div>
