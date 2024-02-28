@@ -1,48 +1,50 @@
-<template>
-  <ul>
-    <transition-group name="list">
-      <TodoItem
-        class="list-item"
-        v-for="(todo, index) in todos"
-        :key="todo"
-        :todo="todo"
-        :index="index"
-      />
-    </transition-group>
-  </ul>
-</template>
+<script setup>
+import TodoItem from './TodoItem.vue'
 
-<script>
-import TodoItem from '@/components/TodoItem';
-
-export default {
-  props: ['todos'],
-  components: { TodoItem },
-};
+defineProps({
+	todos: {
+		require: true,
+	},
+})
 </script>
 
-<style lang="scss" scoped>
-ul {
-  position: relative;
-}
+<template>
+	<ul class="list">
+		<transition-group name="list">
+			<TodoItem
+				class="list__item"
+				v-for="todo in todos"
+				:key="todo.id"
+				:id="todo.id"
+				:content="todo.content"
+				:completed="todo.completed"
+			/>
+		</transition-group>
+	</ul>
+</template>
 
-.list-item {
-  transition: opacity 0.8s ease, transform 0.8s ease;
-  border-bottom: 1px solid rgba(22, 22, 22, 0.35);
+<style lang="scss" scoped>
+.list {
+	position: relative;
+
+	&__item {
+		transition: opacity 0.8s ease, transform 0.8s ease;
+		border-bottom: 1px solid rgba(22, 22, 22, 0.35);
+	}
 }
 
 .list-move {
-  border-bottom: none;
+	border-bottom: none;
 }
 
 .list-enter-from,
 .list-leave-to {
-  opacity: 0;
-  transform: translateX(50px);
+	opacity: 0;
+	transform: translateX(50px);
 }
 
 .list-leave-active {
-  position: absolute;
-  width: 100%;
+	position: absolute;
+	width: 100%;
 }
 </style>

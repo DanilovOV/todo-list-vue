@@ -1,0 +1,20 @@
+html {
+	background-color: var(--c-white);
+	color: var(--c-text-base);
+	height: 100%;
+	overflow-x: hidden;
+	font: 16px/1.25 'Helvetica Neue', sans-serif;
+}
+
+body {
+	height: 100%;
+}
+
+a {
+	font-size: 20px;
+	color: rgba(34, 77, 170, 0.7);
+
+	&:hover {
+		color: rgba(34, 77, 170, 1);
+	}
+}

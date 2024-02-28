@@ -1,0 +1,73 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+::before,
+::after {
+	box-sizing: border-box;
+}
+
+::placeholder {
+	color: inherit;
+}
+
+:focus,
+:active {
+	outline: none;
+}
+
+html,
+body {
+	height: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-size: inherit;
+	font-weight: inherit;
+}
+
+button,
+select,
+input,
+textarea {
+	border: none;
+	font-size: inherit;
+	font-family: inherit;
+}
+
+input[type='number']::-webkit-outer-spin-button,
+input[type='number']::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+}
+input[type='number'],
+input[type='number']:hover,
+input[type='number']:focus {
+	appearance: none;
+	-moz-appearance: textfield;
+}
+
+a,
+a:visited {
+	text-decoration: none;
+}
+
+button {
+	cursor: pointer;
+	background-color: inherit;
+	font-family: inherit;
+}
+
+textarea {
+	resize: vertical;
+}
+
+li {
+	list-style: none;
+}
